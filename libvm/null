@@ -1,0 +1,4 @@
+#set($MARKER="//----")
+${MARKER}${OutputFileName}
+You forgot to write this
+velocity template boot/libvm/null!

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_60" class="java.beans.XMLDecoder">
+ <object class="com.horstmann.violet.StateDiagramGraph">
+  <void method="addNode">
+   <object class="com.horstmann.violet.CircularStateNode" id="CircularInitialStateNode0"/>
+   <object class="java.awt.geom.Point2D$Double" id="Point2D$Double0">
+    <void class="java.awt.geom.Point2D$Double" method="getField">
+     <string>x</string>
+     <void method="set">
+      <object idref="Point2D$Double0"/>
+      <double>259.0</double>
+     </void>
+    </void>
+    <void class="java.awt.geom.Point2D$Double" method="getField">
+     <string>y</string>
+     <void method="set">
+      <object idref="Point2D$Double0"/>
+      <double>283.0</double>
+     </void>
+    </void>
+    <void method="setLocation">
+     <double>259.0</double>
+     <double>283.0</double>
+    </void>
+   </object>
+  </void>
+  <void method="addNode">
+   <object class="com.horstmann.violet.product.diagram.state.CircularFinalStateNode" id="CircularFinalStateNode0"/>
+   <object class="java.awt.geom.Point2D$Double" id="Point2D$Double1">
+    <void class="java.awt.geom.Point2D$Double" method="getField">
+     <string>x</string>
+     <void method="set">
+      <object idref="Point2D$Double1"/>
+      <double>752.0</double>
+     </void>
+    </void>
+    <void class="java.awt.geom.Point2D$Double" method="getField">
+     <string>y</string>
+     <void method="set">
+      <object idref="Point2D$Double1"/>
+      <double>276.0</double>
+     </void>
+    </void>
+    <void method="setLocation">
+     <double>752.0</double>
+     <double>276.0</double>
+    </void>
+   </object>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.StateTransitionEdge"/>
+   <object idref="CircularInitialStateNode0"/>
+   <object idref="CircularFinalStateNode0"/>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.StateTransitionEdge"/>
+   <object idref="CircularFinalStateNode0"/>
+   <object idref="CircularInitialStateNode0"/>
+  </void>
+ </object>
+</java>

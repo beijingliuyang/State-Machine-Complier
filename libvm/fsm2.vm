@@ -1,0 +1,55 @@
+#set($MARKER="//----")
+${MARKER}myfsm2/fsm.java
+package myfsm;
+
+public class fsm {
+#set ($nodenumber=0)
+#set ($i=0)
+#foreach($node in $nodeS)
+#set ($nodenumber=$nodenumber+1)
+#end
+   public enum states {#foreach($node in $nodeS) #set($i=$i+1) $node.name #if($nodenumber!=$i),#end #end}
+   
+#foreach($node in $nodeS)
+#if ($node.type=='start')
+   states currentState = states.$node.name;
+#end
+#end
+
+   public String getName() { return currentState.toString(); }
+   
+#set($t=0)
+#foreach($node in $nodeS)
+   public void goto${node.name}(){
+      switch(currentState){
+#foreach($n in $nodeS)
+#foreach($transition in $transitionS)
+#if($transition.endsAt==$node.nodeid)
+#if($transition.startsAt==$n.nodeid)
+      case $n.name :
+#set($t=1)
+#end
+#end
+#end
+#end
+#if($t!=0)
+         System.out.println("going to $node.name");
+         currentState = states.$node.name; 
+         break;
+#end
+	  default :
+	     System.out.println("ignoring transition to ${node.name}");
+	  }
+  } 
+#end 
+}
+
+
+
+
+
+
+
+
+
+
